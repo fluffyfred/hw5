@@ -42,11 +42,14 @@ bool schedule(
         shifts[i] = 0; // how many shifts a worker has already worked
     }
 
-    sched = DailySchedule(avail.size(), vector<Worker_T>(dailyNeed));
+    // sched = DailySchedule(avail.size(), vector<Worker_T>(dailyNeed));
+
+    std::vector<Worker_T> vect(dailyNeed, -1);
     for(unsigned int i = 0; i < avail.size(); i++) {
-      for(unsigned int j = 0; j < dailyNeed; j++) {
-        sched[i][j] = -1;
-      }
+        sched.push_back(vect);
+    //   for(unsigned int j = 0; j < dailyNeed; j++) {
+    //     sched[i][j] = -1;
+    //   }
     }
 
     // call the helper function
